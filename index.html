@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gummacracker</title>
+    <script src="crack.js" charset="utf-8"></script>
+    <style media="screen">
+      .lausn, .crack, .encrypt, .encrypted{
+        width: 400px;
+        margin-left: 10px;
+        float: left;
+      }
+      .clearfix{
+        clear: both;
+      }
+      hr{
+        max-width: 810px;
+        position: relative;
+        margin-left: 10px;
+        margin-right: 0;
+      }
+      h3{
+        margin-left: 10px;
+      }
+      h1{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gummacracker</h1>
+    <h3>Decode</h3>
+    <textarea class="crack" rows="8" cols="80"></textarea>
+    <p class="lausn"></p>
+    <div class="clearfix"></div>
+    <hr>
+    <h3>Encode</h3>
+    <textarea class="encrypt" rows="8" cols="80"></textarea>
+    <p class="encrypted"></p>
+    <script type="text/javascript">
+      var area = document.querySelector('.crack');
+      area.addEventListener('keyup',function(){
+        var lausn = decrypt(area.value);
+        document.querySelector('.lausn').innerHTML = lausn;
+      });
+
+      var area2 = document.querySelector('.encrypt');
+      area2.addEventListener('keyup',function(){
+        var lausn = encrypt(area2.value);
+        document.querySelector('.encrypted').innerHTML = lausn;
+      });
+    </script>
+  </body>
+</html>
